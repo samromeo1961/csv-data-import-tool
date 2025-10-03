@@ -37,6 +37,8 @@ env/
 
 # Application specific
 mapping_history.json
+config.py
+sample_export.csv
 
 # OS
 .DS_Store

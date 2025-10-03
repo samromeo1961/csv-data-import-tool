@@ -13,6 +13,12 @@ import os
 from typing import Dict, List, Optional
 import anthropic
 
+# Try to import API key from config file, fallback to environment variable
+try:
+    from config import ANTHROPIC_API_KEY
+except ImportError:
+    ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY')
+
 class TakeoffConverter:
     def __init__(self, root):
         self.root = root
@@ -25,7 +31,7 @@ class TakeoffConverter:
         self.mapping_history = self.load_mapping_history()
         
         # AI Client - using direct API call
-        self.client = anthropic.Anthropic()
+        self.client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
         
         self.setup_ui()
     
