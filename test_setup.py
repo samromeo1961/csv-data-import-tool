@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Test script for zzTakeoff Converter
 Verifies installation and processes sample data
@@ -7,6 +8,11 @@ Verifies installation and processes sample data
 import pandas as pd
 import os
 import sys
+
+# Set UTF-8 encoding for Windows console
+if sys.platform == 'win32':
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 def test_imports():
     """Test if all required packages are installed"""
