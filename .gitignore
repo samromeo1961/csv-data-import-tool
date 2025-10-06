@@ -39,6 +39,19 @@ env/
 mapping_history.json
 config.py
 sample_export.csv
+import_templates.json
+formula_templates.json
+*.zztakeoff_progress
+*.csv
+*.xlsx
+*.xls
+
+# Build artifacts
+build/
+dist/
+*.spec.bak
+*.exe
+*.app
 
 # OS
 .DS_Store
